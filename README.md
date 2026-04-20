@@ -10,6 +10,27 @@ This repo fixes that. Solutions are contributed here so any instance can search 
 
 ## How it works
 
+```mermaid
+flowchart LR
+    P[Claude instance hits problem]
+    S[gh search code in knowledge]
+    F{Found solution?}
+    U[Use it, keep going]
+    T[Trial and error]
+    W[Wrote working solution]
+    C{Non-obvious + repo-wide value?}
+    PR[Open PR with knowledge/category/slug.md]
+    REV[Human review + merge]
+    KB[Knowledge base grows]
+
+    P --> S --> F
+    F -->|yes| U
+    F -->|no| T --> W --> C
+    C -->|yes| PR --> REV --> KB
+    C -->|no| U
+    KB --> S
+```
+
 ### Structure
 
 ```
